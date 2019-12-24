@@ -378,10 +378,10 @@
                     <div class="row">
                         <div class="col-md-7">
                             <label>Business Size</label>
-                            <select class="form-control" name="platform">
-                                <option value="offline">Fewer than 10 employees</option>
-                                <option value="online">10 to 49 employees</option>
-                                <option value="online">50 to 249 employees</option>
+                            <select class="form-control" name="businessSize" [(ngModel)]="calculator.businessSize">
+                                <option value="0">Fewer than 10 employees</option>
+                                <option value="1">10 to 49 employees</option>
+                                <option value="2">50 to 249 employees</option>
                             </select>
                         </div>
                         <div class="col-md-5">
@@ -394,7 +394,7 @@
                     <div class="row">
                         <div class="col-md-7">
                             <label>Platform</label>
-                            <select class="form-control" name="platform">
+                            <select class="form-control" name="platform" [(ngModel)]="calculator.platform">
                                 <option value="offline">Offline</option>
                                 <option value="online">Online</option>
                             </select>
@@ -404,18 +404,16 @@
                             <span id="offline">POSLite offline can be use completely offline, meaning no need internet connection in order to manage your inventory efficiently. POSLite offline can be used and connect with multiple PC locally.</span>
                         </div>
                     </div>
-                </div>
-                
-
+                </div> 
 
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-7">
                             <label>Inventory Size</label>
-                            <select class="form-control" name="platform">
-                                <option value="offline">Fewer than 200 Products / Services</option>
-                                <option value="online">201 to 2000 Products / Services</option>
-                                <option value="online">More than 2001 Products / Services</option>
+                            <select class="form-control" name="inventorySize" [(ngModel)]="calculator.inventorySize">
+                                <option value="0">Fewer than 200 Products / Services</option>
+                                <option value="1">201 to 2000 Products / Services</option>
+                                <option value="2">More than 2001 Products / Services</option>
                             </select>
                         </div>
                         <div class="col-md-5">
@@ -429,8 +427,8 @@
                     <div class="row">
                         <div class="col-md-7">
                             <label>Support</label>
-                            <select class="form-control" name="platform">
-                                <option value="offline">Free Aftersales Support</option> 
+                            <select class="form-control" name="support" [(ngModel)]="calculator.support">
+                                <option value="free">Free Aftersales Support</option> 
                             </select>
                         </div>
                         <div class="col-md-5"> 
@@ -441,19 +439,9 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="button" class="btn btn-info" style="border-radius: 1px;">Calculate</button>
+                    <button type="button" class="btn btn-info" (click)="calculate()" style="border-radius: 1px;">Calculate</button>
                 </div>
-            </div>
-        <!-- 	<div class="col-md-4">
-                
-
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
-            </div> -->
+            </div> 
         </div>
     </form>
 </section>
