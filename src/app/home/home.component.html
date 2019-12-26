@@ -3,11 +3,11 @@
     <div class="header-top">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
+            <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
                     <ul>
                         <li><a target="__blank" href="https://www.facebook.com/poslitesoftware/"><i class="fa fa-facebook"></i> Follow us on Facebook</a></li> 
                     </ul>
-                </div>
+            </div>
                 <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
                     <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
                     <a href="mailto:dev.algermakiputin@gmail.com">dev.algermakiputin@gmail.com</a>				
@@ -19,17 +19,15 @@
         <div class="row align-items-center justify-content-between d-flex">
             <div id="logo">
                 <a href="index.html" class="text-uppercase"><img src="assets/images/logo.png"></a>
-            </div>
-
-            <nav id="nav-menu-container">
+            </div> 
+            <nav id="nav-menu-container" class="navbar">
                 <ul class="nav-menu">
-                    <li class="menu-active"><a href="#home">Home</a></li>
-                    <li><a href="#features">Features</a></li> 
-                    <li><a href="#reviews">Reviews</a></li>
-                    <li><a href="#pricing">Pricing</a></li>	          
-                    <li><a href="#contact">Contact</a></li> 
-                </ul> 
-
+                    <li class="menu-active nav-item"><a href="#home">Home</a></li>
+                    <li class="nav-item"><a href="#features">Features</a></li> 
+                    <li class="nav-item"><a href="#reviews">Reviews</a></li>
+                    <li class="nav-item"><a href="#pricing">Pricing</a></li>	          
+                    <li class="nav-item"><a href="#contact">Contact</a></li> 
+                </ul>  
             </nav> 
             <div class="navbar-right">
               <a target="__blank" href="https://poslite.herokuapp.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
@@ -395,8 +393,8 @@
                         <div class="col-md-7">
                             <label>Platform</label>
                             <select class="form-control" name="platform" [(ngModel)]="calculator.platform">
-                                <option value="offline">Offline</option>
-                                <option value="online">Online</option>
+                                <option value="0">Offline</option>
+                                <option value="1">Online</option>
                             </select>
                         </div>
                         <div class="col-md-5">
@@ -439,7 +437,16 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="button" class="btn btn-info" (click)="calculate()" style="border-radius: 1px;">Calculate</button>
+                    
+                    <div class="row">
+                        <div class="col-md-7">
+                            <button type="button" [disabled]="loading" class="btn btn-info" id="calculate-button" (click)="calculate(thissss)" style="border-radius: 1px;"><i *ngIf="loading" class="fa fa-spinner fa-spin"></i> Calculate</button>
+                        </div>
+                        <div class="col-md-5" *ngIf="calculator.calculated && !loading">
+                            <span style="font-weight: normal;">Estimated Price: </span> <span style="font-size:32px;">₱{{ calculator.total | number }}</span>
+                        </div>
+                    </div>
+  
                 </div>
             </div> 
         </div>
