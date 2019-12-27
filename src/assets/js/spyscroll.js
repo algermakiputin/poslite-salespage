@@ -6,8 +6,7 @@ window.onload = function() {
     window.onscroll = function() {
         
         var yPosition = document.documentElement.scrollTop; 
-        var offset = 550; 
- 
+        var offset = 550;  
 
         for (i = 0; i < navbar.length; i++) {
             
