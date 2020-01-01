@@ -1,6 +1,19 @@
 $(document).ready(function() {
     "use strict";
 
+    $(function() {
+		var header = $(".start-style");
+		$(window).scroll(function() {    
+			var scroll = $(window).scrollTop();
+		
+			if (scroll >= 10) {
+				header.removeClass('start-style').addClass("scroll-on");
+			} else {
+				header.removeClass("scroll-on").addClass('start-style');
+			}
+		});
+	});	
+
     var window_width = $(window).width(),
         window_height = window.innerHeight,
         header_height = $(".default-header").height(),

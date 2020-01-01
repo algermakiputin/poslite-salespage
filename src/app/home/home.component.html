@@ -1,5 +1,58 @@
  
-<header id="header" class="bounce">
+<header class="navigation-wrap bg-light start-header start-style" id="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
+                    <ul>
+                        <li><a target="__blank" href="https://www.facebook.com/poslitesoftware/"><i class="fa fa-facebook"></i> Follow us on Facebook</a></li> 
+                    </ul>
+            </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
+                    <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
+                    <a href="mailto:dev.algermakiputin@gmail.com">dev.algermakiputin@gmail.com</a>				
+                </div>
+            </div>			  					
+        </div>
+    </div>
+    <div class="container main-menu">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="https://themeforest.net/user/ig_design/portfolio" target="_blank"><img src="assets/images/logo.png" alt=""></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="mainnav"> 
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                         
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 menu-active">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li> 
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right" >
+                        <a target="__blank" href="https://poslite.herokuapp.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- <header id="header" class="bounce">
     <div class="header-top">
         <div class="container">
             <div class="row">
@@ -34,7 +87,7 @@
           </div>
         </div>
     </div>
-</header><!-- #header -->
+</header>  -->
 
 <section class="banner-area" id="home"> 
     <div class="container">
@@ -44,14 +97,11 @@
                     <h1>Make Things Easier with the hottest Inventory Software In The Market</h1>  
                 </header>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
+                    <div class="carousel-inner"> 
                         <div class="carousel-item ">
-                            <img class="d-block w-100" src="./assets/images/header/pos.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item active">
                             <img class="d-block w-100" src="./assets/images/header/products.jpg" alt="First slide">
                         </div> 
-                        <div class="carousel-item">
+                        <div class="carousel-item active">
                             <img class="d-block w-100" src="./assets/images/header/graph.jpg" alt="First slide">
                         </div> 
                         <div class="carousel-item">
@@ -370,11 +420,11 @@
     </header>
     <form class="container">
         <div class="row"> 
-            <div class="col-md-10 mx-auto ">
+            <div class="col-sm-10 mx-auto ">
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-sm-7">
                             <label>Business Size</label>
                             <select class="form-control" name="businessSize" [(ngModel)]="calculator.businessSize">
                                 <option value="0">Fewer than 10 employees</option>
@@ -382,7 +432,7 @@
                                 <option value="2">50 to 249 employees</option>
                             </select>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <span id="offline">POSLite offline can be use completely offline, meaning no need internet connection in order to manage your inventory efficiently. POSLite offline can be used and connect with multiple PC locally.</span>
                         </div>
                     </div>
@@ -390,14 +440,14 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-sm-7">
                             <label>Platform</label>
                             <select class="form-control" name="platform" [(ngModel)]="calculator.platform">
                                 <option value="0">Offline</option>
                                 <option value="1">Online</option>
                             </select>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <br/>
                             <span id="offline">POSLite offline can be use completely offline, meaning no need internet connection in order to manage your inventory efficiently. POSLite offline can be used and connect with multiple PC locally.</span>
                         </div>
@@ -406,7 +456,7 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-sm-7">
                             <label>Inventory Size</label>
                             <select class="form-control" name="inventorySize" [(ngModel)]="calculator.inventorySize">
                                 <option value="0">Fewer than 200 Products / Services</option>
@@ -414,7 +464,7 @@
                                 <option value="2">More than 2001 Products / Services</option>
                             </select>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-sm-5">
                             <br/>
                             <span id="offline">Estimated number of products and services your business is selling.</span>
                         </div>
@@ -423,13 +473,13 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-md-7">
+                        <div class="col-sm-7">
                             <label>Support</label>
                             <select class="form-control" name="support" [(ngModel)]="calculator.support">
                                 <option value="free">Free Aftersales Support</option> 
                             </select>
                         </div>
-                        <div class="col-md-5"> 
+                        <div class="col-sm-5"> 
                             <br/>
                             <span id="offline">Our customer is always right, our team always strives to provide the best product we can offer. After purchasing POSLite you'll get lifetime after sales support.</span>
                         </div>
@@ -439,10 +489,10 @@
                 <div class="form-group">
                     
                     <div class="row">
-                        <div class="col-md-7">
-                            <button type="button" [disabled]="loading" class="btn btn-info" id="calculate-button" (click)="calculate(thissss)" style="border-radius: 1px;"><i *ngIf="loading" class="fa fa-spinner fa-spin"></i> Calculate</button>
+                        <div class="col-sm-7">
+                            <button type="button" [disabled]="loading" class="btn btn-info" id="calculate-button" (click)="calculate()" style="border-radius: 1px;"><i *ngIf="loading" class="fa fa-spinner fa-spin"></i> Calculate</button>
                         </div>
-                        <div class="col-md-5" *ngIf="calculator.calculated && !loading">
+                        <div class="col-sm-5" *ngIf="calculator.calculated && !loading">
                             <span style="font-weight: normal;">Estimated Price: </span> <span style="font-size:32px;">₱{{ calculator.total | number }}</span>
                         </div>
                     </div>
@@ -487,46 +537,68 @@
     </div>
 </section>
 
-<section id="contact">
+<section id="contact" *ngIf="!enquirySent; else enquiry_success" style="transform: all 0.5s ease ;">
     <header class="container text-center">
         <h2 class="section-header">CONTACT US</h2>
         <p class="lead">For question about POSLite, we're ready to assist.</p>
     </header>
-    <div class="container">
-            
-
-        <div class="row input-container">
+    <div class="container"> 
+        <form name="contactForm"  class="row input-container" #contactForm="ngForm"  (ngSubmit)="contactForm.form.valid && onSubmit(contactForm)" novalidate> 
             <div class="col-md-12">
                 <div class="styled-input wide">
-                    <input type="text" required />
-                    <label>Name</label> 
-                </div>
+                    <input type="text" id="name" 
+                        [class.is-invalid]="name.invalid && name.touched"  
+                        name="name" #name="ngModel" 
+                        [(ngModel)]="enquiriesModel.name"  
+                        required
+                         
+                    />
+                    <label>Name</label>  
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                </div> 
             </div>
             <div class="col-md-6">
                 <div class="styled-input">
-                    <input type="text" required />
+                    <input type="email" email [class.is-invalid]="email.invalid && email.touched" required name="email" #email="ngModel" [(ngModel)]="enquiriesModel.email"/>
                     <label>Email</label> 
+                    <small class="text-danger" [class.d-none]="email.valid || email.untouched">Invalid email</small>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="styled-input" style="float:right;">
-                    <input type="text" required />
-                    <label>Phone Number</label> 
+                    <input type="text" 
+                    [class.is-invalid]="number.invalid && number.touched" 
+                    required name="number" #number="ngModel" 
+                    [(ngModel)]="enquiriesModel.number"  
+                    />
+                    <label>Contact Number</label> 
+                    <small class="text-danger" [class.d-none]="number.valid || number.untouched">Phone number is required</small>
                 </div>
             </div>
             <div class="col-md-12">
                 <div class="styled-input wide">
-                    <textarea required></textarea>
+                    <textarea required [class.is-invalid]="message.invalid && message.touched" name="message" #message="ngModel" [(ngModel)]="enquiriesModel.message"></textarea>
                     <label>Message</label>
+                    <small class="text-danger" [class.d-none]="message.valid || message.untouched">Message is required</small>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="btn-lrg submit-btn">Send Message</div>
+                <input type="submit" [disabled]="!contactForm.form.valid"  [disabled]="sending" class="btn-lrg submit-btn" value="Send Message" style="max-width: 200px;">  
             </div>
-        </div>
+        </form> 
     </div>
 
 </section>
+
+<ng-template #enquiry_success >
+    <article class="text-center" style="margin: 120px 0;transform: all 0.5s ease ;">
+        
+        <h3 class="text-success"><i class="fa fa-check-circle"></i> Message Sent Successfully</h3>
+        <br/>
+        <p >We'll get back to you soon!</p>
+    </article>
+    
+</ng-template>
 
 
 <footer class="footer-area section-gap text-center">

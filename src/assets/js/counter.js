@@ -14,8 +14,7 @@ $(document).ready(function() {
              counter($("#luzon"), 0, 48, 320);
              counter($("#visayas"), 0, 34, 300);
              counter($("#mindanao"), 0, 25, 460);
-            counted = 1;
-            alert(0)
+            counted = 1; 
         }else {
              
         }
@@ -46,7 +45,7 @@ function counter(elem, start, end,speed, increment = 0) {
             elem.text(end);
             clearInterval(interval);
         }
-    }, speed / 2.89);
+    }, speed / 4.89);
 
 
 

@@ -1,6 +1,6 @@
 window.onload = function() {
 
-    var navbar = this.document.getElementById("nav-menu-container").getElementsByTagName("li");
+    var navbar = this.document.getElementById("mainnav").getElementsByTagName("li");
     var elemOffset = 200;
     
     window.onscroll = function() {

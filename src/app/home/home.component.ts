@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core'; 
+import { Enquiries } from '../enquiries';
+import { EnquiriesService } from '../enquiries.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   loading = false;
+  enquirySent = false;
   calculator = {
     calculated: false,
     businessSize: 0,
@@ -16,18 +19,23 @@ export class HomeComponent implements OnInit {
     inventorySize: 0,
     support: 'free',
     total: 0
-  }
+  }; 
 
+  sending = false;
   businessSize = [7800, 14999, 23999];
   inventorySize = [5999, 11999, 17800];
   platform = [3500, 6000];
+  
+  enquiriesModel = new Enquiries("", "", "", "");
 
-  constructor() { }
+  constructor( private _enquiryService: EnquiriesService ) { }
 
-  ngOnInit() {
+  ngOnInit() { 
+
   }
 
-  calculate(button) { 
+
+  calculate() { 
     // Business Size: 
     // 0 = 5000
     // 1 = 10,999
@@ -54,8 +62,26 @@ export class HomeComponent implements OnInit {
                               this.platform[this.calculator.platform];
       this.loading = false;
     }, 1500);
-    
-    
+     
   
+  }
+
+  onSubmit(form) { 
+  
+    this.sending = true;
+    this._enquiryService.enroll(this.enquiriesModel)
+      .subscribe(
+        data => {
+          this.sending = false; 
+          this.enquirySent = true;
+        },
+        error => {
+          this.sending = false;
+          console.log(error)
+        }
+
+      );
+
+    
   }
 }
