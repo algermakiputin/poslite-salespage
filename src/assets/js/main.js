@@ -1,6 +1,7 @@
 $(document).ready(function() {
     "use strict";
-
+    new WOW().init();
+    
     $(function() {
 		var header = $(".start-style");
 		$(window).scroll(function() {    

@@ -93,12 +93,20 @@ body {
    /*background-image: url('../assets/images/home-bg.jpg');*/
 }
 
+.icon-container {
+	float:left;
+	height: 100px;
+}
+
+.feature header h4 {
+	margin-bottom: 15px;
+}
+
 
 .carousel-control.left,.carousel-control.right  {background:none;width:25px;}
 .carousel-control.left {left:-25px;}
 .carousel-control.right {right:-25px;}
-.broun-block {
-    background: url("http://myinstantcms.ru/images/bg-broun1.jpg") repeat scroll center top rgba(0, 0, 0, 0);
+.broun-block { 
     padding-bottom: 34px;
 }
 .block-text {
@@ -545,6 +553,7 @@ textarea.is-invalid
 
 }
 
+
 html {
 	scroll-behavior: smooth;
 }
@@ -562,6 +571,17 @@ input[type="submit"]:disabled {
     #header-carousel {
         padding: 33px 40px 91px 31px;
     }
+}
+
+@media only screen and (max-width: 1024px) {
+	#pc-wrapper {
+		margin-top:16%;
+	}
+
+	.icon-container {
+		float: left;
+		height: 140px;
+	}
 }
 
 
@@ -584,11 +604,15 @@ input[type="submit"]:disabled {
 	#home {
 		margin-bottom: 160px;
 	}
+
+	.icon-container {
+		height:105px;
+	}
 } 
 
 @media only screen and (max-width:767px) {
 	#pc-wrapper {
-		margin-top:22%;
+		margin-top:25%;
 	}
 
 	#header-carousel {
@@ -611,6 +635,24 @@ input[type="submit"]:disabled {
 		padding-bottom: 20px !important;
 	}
 
+}
+
+@media only screen and (max-width: 425px) {
+
+	#pc-wrapper {
+		margin-top: 26%;
+	}
+	#home {
+		max-height: 525px;
+	}
+
+	#features {
+		margin-top: 150px;
+	}
+
+	#counter {
+		margin: 80px 0 0 0;
+	}
 }
 
 @media only screen and (max-width: 375px) {
