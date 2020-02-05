@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   sending = false;
   businessSize = [7800, 14999, 23999];
   inventorySize = [5999, 11999, 17800];
-  platform = [3500, 6000];
+  platform = [5200, 10000];
   
   enquiriesModel = new Enquiries("", "", "", "");
 

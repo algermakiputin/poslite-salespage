@@ -26,9 +26,7 @@ window.onload = function() {
                     li.classList.remove("menu-active");
                 }  
                 
-            }else {
-                
-            }
+            } 
              
         }
     }
