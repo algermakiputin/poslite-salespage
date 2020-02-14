@@ -8,13 +8,17 @@ import { AppComponent } from './app.component';
 import { AboutComponent } from './about/about.component';
 import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
+import { BlogComponentComponent } from './blog-component/blog-component.component';
+import { SinglePageBlogComponentComponent } from './single-page-blog-component/single-page-blog-component.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     BlogComponent,
-    HomeComponent
+    HomeComponent,
+    BlogComponentComponent,
+    SinglePageBlogComponentComponent
   ],
   imports: [
     BrowserModule,

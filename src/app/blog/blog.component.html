@@ -1,1 +1,153 @@
-<p>blog works!</p>
+
+<header class="navigation-wrap bg-light start-header start-style" id="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
+                    <ul>
+                        <li><a target="__blank" href="https://www.facebook.com/poslitesoftware/"><i class="fa fa-facebook"></i> Follow us on Facebook</a></li> 
+                    </ul>
+            </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
+                    <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
+                    <a href="mailto:dev.algermakiputin@gmail.com">dev.algermakiputin@gmail.com</a>				
+                </div>
+            </div>			  					
+        </div>
+    </div>
+    <div class="container main-menu">
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand" href="https://themeforest.net/user/ig_design/portfolio" target="_blank"><img src="assets/images/logo.png" alt=""></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="mainnav"> 
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li> 
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 menu-active">
+                                <a class="nav-link" [routerLink]="['/blog']" onclick="window.scrollTo(0, 0)">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right" >
+                        <a target="__blank" href="https://poslite.herokuapp.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+  </header> 
+<div style="margin: 180px 0 100px 0;" >
+    <div class="container" *ngIf="!slug">
+         
+        <section class="blog-wrapper" *ngFor="let post of posts | keyvalue">
+            <div class="row">
+                <div class="col-md-3">
+                    <figure >
+                        <img src="{{ post.value[0].featured_image }}">
+                    </figure>
+                </div>
+                
+                <article class="col-md-9">
+                    <h1> 
+                        <a class="archive-post-title" [routerLink]="['/blog', post.key]" onclick="window.scrollTo(0,0)">{{  post.value[0].title }}</a>
+                    </h1>
+                    <p>
+                        {{  post.value[0].slug }}
+                    </p>
+                    <a [routerLink]="['/blog', post.key]" class="text-link">Read More...</a>
+                </article>
+            </div>
+        </section>
+         
+    </div>
+
+    <div class="container" *ngIf="slug && hasPost">
+        <section>
+            
+            <article>
+                <header> 
+                    
+                    <h1 class="post-title">
+                        <a>{{ posts[slug][0].title }}</a>
+                    </h1>
+                </header>
+                <img src="{{ posts[slug][0].featured_image }}" style="width: 100%;max-width: 300px; margin-right: 25px;margin-bottom: 10px;" align="left">
+                <div class="body" [innerHTML]="posts[slug][0].content">
+                     
+                     
+                </div>
+            </article>
+        </section>
+
+    </div>
+
+</div>
+
+<footer class="footer-area section-gap text-center">
+    <p>&copy; Copryright 2019 - Product by <a target="__blank" href="https://algermakiputin.github.io/portfolio/">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>
+  </footer>
+
+<style>
+
+    .blog-wrapper {
+        padding: 40px;
+        background-color: #fff;
+        border-bottom:solid 1px #f4f4f5;
+        border-radius: 3px;
+        margin-bottom: 20px;
+    }
+
+    .blog-wrapper figure {
+        background-color: #f4f4f5;
+        margin-block-start: 0;
+        margin-block-end: 0;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+    }
+
+    .blog-wrapper article h1 {
+        margin-bottom: 20px;
+    }
+
+    .blog-wrapper article button {
+        border-radius: 0;
+
+    }
+
+    .post-title {
+        margin-bottom: 20px;
+    }
+
+    .archive-post-title {
+        color: #333333;
+        font-size: 32px;
+    }
+
+    .blog-wrapper figure img {
+        width: 100%;
+        box-shadow: 2px 2px 5px 2px rgba(255, 255, 255, 0.5);
+        border:solid 1px #eee;
+        border-radius: 2px
+    }
+                            
+
+   
+</style>

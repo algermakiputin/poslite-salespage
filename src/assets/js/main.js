@@ -13,7 +13,11 @@ $(document).ready(function() {
 				header.removeClass("scroll-on").addClass('start-style');
 			}
 		});
-	});	
+    });	
+    
+    $(".post-title").click(function() {
+        window.scrollTo(0, 0);
+    })
 
     var window_width = $(window).width(),
         window_height = window.innerHeight,

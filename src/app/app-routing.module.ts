@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent},
   { path: 'blog', component: BlogComponent},
   { path: 'about', component: AboutComponent},
+  { path: 'blog/:slug', component: BlogComponent},
   
 ];
 
