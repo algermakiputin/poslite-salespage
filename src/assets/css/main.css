@@ -516,17 +516,17 @@ textarea.is-invalid
     font-size: 14.5px;
 }
 
-ul {
+.blog-wrapper ul {
 	list-style-type: disc !important;
 	margin-left:15px;
 }
 
-ol {
+.blog-wrapper ol {
 	list-style-type: decimal;
 	margin-left:15px;
 }
 
-ul li {
+.blog-wrapper ul li {
 	margin-bottom: 10px;
 }
 
@@ -534,6 +534,11 @@ ul li {
 	bottom:0 !important;
 	opacity: 1 !important;
 	 
+}
+
+.archive-post-title {
+
+	line-height: 0.1;
 }
 
 @media only screen and (max-width: 990px) {
