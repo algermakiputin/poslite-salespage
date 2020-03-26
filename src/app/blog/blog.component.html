@@ -56,7 +56,12 @@
   </header> 
 <div style="margin: 180px 0 100px 0;" >
     <div class="container" *ngIf="!slug">
-         
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li> 
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+            </nav>
         <section class="blog-wrapper" *ngFor="let post of posts | keyvalue">
             <div class="row">
                 <div class="col-md-3">
@@ -75,19 +80,23 @@
                     <a [routerLink]="['/blog', post.key]" class="text-link" onclick="window.scrollTo(0, 0)">Read More...</a>
                 </article>
             </div>
-        </section>
-         
+        </section> 
     </div>
 
     <div class="container" *ngIf="slug && hasPost">
         <section>
-            
             <article>
-                <header> 
-                    
+                <header>  
                     <h1 class="post-title">
                         <a>{{ posts[slug][0].title }}</a>
                     </h1>
+                    <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a [routerLink]="['/']">Home</a></li>
+                        <li class="breadcrumb-item"><a [routerLink]="['/blog']">Blog</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ posts[slug][0].title }}</li>
+                    </ol>
+                    </nav>
                 </header>
                 <img src="{{ posts[slug][0].featured_image }}" style="width: 100%;max-width: 300px; margin-right: 25px;margin-bottom: 10px;" align="left">
                 <div class="body" [innerHTML]="posts[slug][0].content">

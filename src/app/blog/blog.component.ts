@@ -12,6 +12,9 @@ export class BlogComponent implements OnInit {
   hasPost = false;
   post = [];
 
+  showBreadCrumbs = false;
+
+
   posts = {
     "track-your-progress-inventory-software" : [{
       featured_image: '/assets/blog/image-3.jpg',
@@ -104,7 +107,6 @@ export class BlogComponent implements OnInit {
     if (this.slug) {
 
       if (this.posts[this.slug]) {
-
         this.hasPost = true;
       }
     }

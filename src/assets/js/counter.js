@@ -2,10 +2,9 @@
   
 $(document).ready(function() {
     
-    var countOffset = $("#count-section").offset().top; 
-    var counted = 0; 
 
-    console.log(countOffset)
+    var countOffset = $("#count-section").offset().top; 
+    var counted = 0;  
     
     $(window).scroll(function() {
         var win = document.documentElement.scrollTop; 
