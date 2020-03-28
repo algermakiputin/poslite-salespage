@@ -481,7 +481,7 @@
                             </div> 
                             <div class="generic_price_btn clearfix"> 
                                
-                                <a class="" href="https://m.me/poslitesoftware" target="__blank">Sign up</a>
+                                <a class="" routerLink="/signup">Sign up</a>
                                 
                             </div> 
                             
@@ -525,7 +525,7 @@
                             </div> 
                             <div class="generic_price_btn clearfix"> 
                                  
-                                <a class="" href="https://m.me/poslitesoftware" target="__blank">Sign up</a>
+                                <a class="" routerLink="/signup">Sign up</a>
                              
                             </div> 
                             
@@ -568,7 +568,7 @@
                             </div> 
                             <div class="generic_price_btn clearfix"> 
                                  
-                                <a class="" href="https://m.me/poslitesoftware" target="__blank">Sign up</a> 
+                                <a class="" routerLink="/signup">Sign up</a> 
                             </div> 
                         </div> 
                             
@@ -577,94 +577,10 @@
                 
             </div>
         </section>   
-    </div>
-    <!-- <form class="container">
-        <div class="row"> 
-            <div class="col-sm-10 mx-auto ">
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-7 wow fadeInLeft">
-                            <label>Business Size</label>
-                            <select class="form-control" name="businessSize" [(ngModel)]="calculator.businessSize">
-                                <option value="0">Fewer than 3 employees</option>
-                                <option value="1">4 to 10 employees</option>
-                                <option value="2">11 or More</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-5 wow fadeInRight">
-                        <br>
-                            <span id="offline">To determine the resources that is needed please select the size that best describe your business.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-7 wow fadeInLeft">
-                            <label>Platform</label>
-                            <select class="form-control" name="platform" [(ngModel)]="calculator.platform">
-                                <option value="0">Offline</option>
-                                <option value="1">Online</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-5 wow fadeInRight">
-                            <br/>
-                            <span id="offline">We offer offline and cloudbase solution, our reliable Cloud Network has 300% faster speed and 99% uptime.</span>
-                        </div>
-                    </div>
-                </div> 
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-7 wow fadeInLeft">
-                            <label>Inventory Size</label>
-                            <select class="form-control" name="inventorySize" [(ngModel)]="calculator.inventorySize">
-                                <option value="0">Fewer than 200 Products / Services</option>
-                                <option value="1">201 to 2000 Products / Services</option>
-                                <option value="2">More than 2001 Products / Services</option>
-                            </select>
-                        </div>
-                        <div class="col-sm-5 wow fadeInRight">
-                            <br/>
-                            <span id="offline">Estimated number of products and services your business is selling.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-sm-7 wow fadeInLeft">
-                            <label>Support</label>
-                            <select class="form-control" name="support" [(ngModel)]="calculator.support">
-                                <option value="free">Free Aftersales Support</option> 
-                            </select>
-                        </div>
-                        <div class="col-sm-5 wow fadeInRight"> 
-                            <br/>
-                            <span id="offline">Our customer is always right, our team always strives to provide the best product we can offer.</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    
-                    <div class="row">
-                        <div class="col-sm-7 wow fadeInLeft">
-                            <button type="button" [disabled]="loading" class="btn btn-info" id="calculate-button" (click)="calculate()" style="border-radius: 1px;"><i *ngIf="loading" class="fa fa-spinner fa-spin"></i> Calculate</button>
-                        </div>
-                        <div class="col-sm-5" *ngIf="calculator.calculated && !loading">
-                            <span style="font-weight: normal;">Estimated Price: </span> <span style="font-size:32px;">₱{{ calculator.total | number }}</span>
-                        </div>
-                    </div>
-  
-                </div>
-            </div> 
-        </div>
-    </form> -->
+    </div> 
 </section>
 
-<section id="divider" class="well" style="margin-bottom: 80px; background: #333;background-image: url('./assets/images/divider.jpeg');background-position-y:75%; 
+<section id="divider"  class="well" style="margin-bottom: 80px; background: #333;background-image: url('./assets/images/divider.jpeg');background-position-y:75%; 
 				">	
     <div  style="padding: 100px 0;min-height: 400px;background-color: rgba(0,0,0,0.85);" id="count-section">
         <div class="wow zoomIn" data-wow-delay="0.5s">
@@ -710,6 +626,7 @@
             <div class="col-md-12 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="styled-input wide">
                     <input type="text" id="name" 
+                        autocomplete="name"
                         [class.is-invalid]="name.invalid && name.touched"  
                         name="name" #name="ngModel" 
                         [(ngModel)]="enquiriesModel.name"  
@@ -732,7 +649,8 @@
                     <input type="text" 
                     [class.is-invalid]="number.invalid && number.touched" 
                     required name="number" #number="ngModel" 
-                    [(ngModel)]="enquiriesModel.number"  
+                    [(ngModel)]="enquiriesModel.number"
+                    autocomplete="number"  
                     />
                     <label>Contact Number</label> 
                     <small class="text-danger" [class.d-none]="number.valid || number.untouched">Phone number is required</small>
@@ -762,6 +680,7 @@
     </article>
     
 </ng-template>
+
 
 <footer class="footer-area section-gap text-center">
     <p>&copy; Copryright 2019 - Product by <a target="__blank" href="https://algermakiputin.github.io/portfolio/">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>

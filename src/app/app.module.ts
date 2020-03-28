@@ -10,6 +10,7 @@ import { BlogComponent } from './blog/blog.component';
 import { HomeComponent } from './home/home.component';
 import { BlogComponentComponent } from './blog-component/blog-component.component';
 import { SinglePageBlogComponentComponent } from './single-page-blog-component/single-page-blog-component.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { SinglePageBlogComponentComponent } from './single-page-blog-component/s
     BlogComponent,
     HomeComponent,
     BlogComponentComponent,
-    SinglePageBlogComponentComponent
+    SinglePageBlogComponentComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

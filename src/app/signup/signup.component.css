@@ -1,0 +1,44 @@
+body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.login_form {
+    background-color: #ffffff;
+    border: solid 1px #ddd;
+    padding: 30px;
+    width: 450px;
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+}
+
+.form-control {
+    border-radius: 0;
+    border: 0;
+    border-bottom: solid 1px #ddd;
+}
+
+.form-control:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: -webkit-focus-ring-color auto 0px 1px 0;
+    background-color: rgb(250,250,250);
+    border-bottom: solid 1px #005cbf;
+    transition: all 0.5s;
+}
+
+.login_form .btn {
+    width: 90%;
+    display: block;
+    margin: auto;
+
+    border-radius: 25px;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+}

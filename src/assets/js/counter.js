@@ -1,10 +1,13 @@
 
   
-$(document).ready(function() {
-    
+function start_counter() {
 
-    var countOffset = $("#count-section").offset().top; 
     var counted = 0;  
+    var countOffset = 1000;
+    
+    if ($("#count-section").length)
+        countOffset = $("#count-section").offset().top
+   
     
     $(window).scroll(function() {
         var win = document.documentElement.scrollTop; 
@@ -18,7 +21,7 @@ $(document).ready(function() {
              
         }
     });
-})
+}
 
 /* 
 @@params

@@ -109,7 +109,16 @@ export class BlogComponent implements OnInit {
       if (this.posts[this.slug]) {
         this.hasPost = true;
       }
-    }
+    } 
+
+
+    (function ($) {
+      $(document).ready(function(){
+        navbar_spyscroll(); 
+      });
+    })(jQuery);
+
+
   }
    
    

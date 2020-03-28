@@ -1,4 +1,4 @@
-window.onload = function() {
+function navbar_spyscroll() {
 
     var navbar = this.document.getElementById("mainnav").getElementsByTagName("li");
     var elemOffset = 200;
@@ -30,9 +30,7 @@ window.onload = function() {
              
         }
     }
-     
 }
-
 
 /* 
 Home = 0;
