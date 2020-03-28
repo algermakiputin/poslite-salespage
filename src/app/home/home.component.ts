@@ -6,7 +6,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  styleUrls: ['./home.component.css'] 
 })
 export class HomeComponent implements OnInit {
 
@@ -31,12 +31,7 @@ export class HomeComponent implements OnInit {
   constructor( private _enquiryService: EnquiriesService ) { }
 
   ngOnInit() { 
-    (function ($) {
-      $(document).ready(function(){
-        navbar_spyscroll();
-        start_counter();
-      });
-    })(jQuery);
+    
   }
 
 

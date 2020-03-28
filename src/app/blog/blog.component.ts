@@ -112,11 +112,11 @@ export class BlogComponent implements OnInit {
     } 
 
 
-    (function ($) {
-      $(document).ready(function(){
-        navbar_spyscroll(); 
-      });
-    })(jQuery);
+    // (function ($) {
+    //   $(document).ready(function(){
+    //     navbar_spyscroll(); 
+    //   });
+    // })(jQuery);
 
 
   }

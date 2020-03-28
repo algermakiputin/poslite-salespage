@@ -26,7 +26,10 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./assets/js/spyscroll.js",
+              "./assets/js/counter.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -120,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "salespage"
+    }
+  },
+  "defaultProject": "salespage",
+  "cli": {
+    "analytics": "8322ec34-f58c-42ff-b5fa-95bef32289e7"
+  }
 }
