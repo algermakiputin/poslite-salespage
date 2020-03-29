@@ -27,8 +27,8 @@
               "src/styles.css"
             ],
             "scripts": [
-              "./assets/js/spyscroll.js",
-              "./assets/js/counter.js"
+              "src/assets/js/spyscroll.js",
+              "src/assets/js/counter.js"
             ]
           },
           "configurations": {
