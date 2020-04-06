@@ -6,17 +6,18 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SignupService {
 
-  // _url = 'https://poslitesoftware.com/salespage/signup';
-  // constructor(private _http: HttpClient) { }
+  _url = 'http://localhost/salespage/user_signup.php';
+  constructor(private _http: HttpClient) { }
 
-  // enroll(enquiries: Enquiries) { 
-  //   let headers = new HttpHeaders();
-  //   headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-  
-  //   return this._http.post<any>(this._url, enquiries, {
-  //     headers: headers,
-  //     responseType: 'json'
-  //   });
+  enroll(data) { 
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+    
+    console.log(data);
+    return this._http.post<any>(this._url, data, {
+      headers: headers,
+      responseType: 'json'
+    });
 
-  // }
+  }
 }

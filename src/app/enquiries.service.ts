@@ -13,7 +13,7 @@ export class EnquiriesService {
   enroll(enquiries: Enquiries) { 
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/json; charset=utf-8');
-  
+    
     return this._http.post<any>(this._url, enquiries, {
       headers: headers,
       responseType: 'json'

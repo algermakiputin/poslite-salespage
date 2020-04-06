@@ -5,7 +5,7 @@ License: Creative Commons Attribution 3.0 Unported
 License URL: http://creativecommons.org/licenses/by/3.0/
 --*/
 /*-- reset --*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+/* html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, dl, dt, dd, ol, nav ul, nav li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
@@ -16,6 +16,10 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
+} */
+
+small {
+  font-size: 12px;
 }
 
 ol, ul {
@@ -28,11 +32,7 @@ blockquote, q {
   quotes: none;
 }
 
-.navbar {
-    padding: 10px 20px;
-    background-color:inherit; 
-    z-index: 99;
-}
+ 
 .container {
     margin: auto;
 }
@@ -116,24 +116,23 @@ img {
   max-width: 100%;
 }
 
-
+ 
 /*-- end reset --*/
 .main-wrapper {
-    background: #2F80ED !important;
+    background-color: #333;
+    /* background: #56CCF2 !important; */
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2) !important;
+    /* background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2) !important;
     background: -moz-linear-gradient(to top, #2F80ED, #56CCF2) !important;
     background: -o-linear-gradient(to top, #2F80ED, #56CCF2) !important;
-    background: linear-gradient(to top, #2F80ED, #56CCF2) !important;
+    background: linear-gradient(to top, #2F80ED, #56CCF2) !important; */
     background-size: cover !important;
     background-attachment: fixed !important;
     font-family: 'Roboto', sans-serif !important;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    right: 0;
-    bottom: 0; 
+    position: relative;
+
+    z-index: 99;
+    /* background-image: url('https://images.pexels.com/photos/3966776/pexels-photo-3966776.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'); */
   }
 
 h1 {
@@ -148,7 +147,7 @@ h1 {
 
 /*-- main --*/
 .main-w3layouts {
-  padding: 5em 0 1em;
+  padding: 14em 0 1em;
 }
 
 .main-agileinfo {
@@ -182,10 +181,19 @@ input[type="text"], input[type="email"], input[type="password"] {
   font-family: 'Roboto', sans-serif;
 }
 
-input.email, input.text.w3lpass {
+/* input.email, input.text.w3lpass {
   margin: 2em 0;
+} */
+.form-group {
+  margin-top: 18px;
 }
 
+header  p {
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 10px;
+}
 .text:focus, .text:valid {
   box-shadow: none;
   outline: none;
@@ -371,19 +379,14 @@ input.checkbox:checked:after {
 }
 
 /*-- //copyright --*/
-.wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
 
 .colorlib-bubbles {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%; 
+  z-index: -1;
 }
 
 .colorlib-bubbles li {
@@ -409,6 +412,7 @@ input.checkbox:checked:after {
   -o-border-radius: 50%;
   -ms-border-radius: 50%;
   border-radius: 50%;
+  z-index: 1;
 }
 
 .colorlib-bubbles li:nth-child(1) {
@@ -594,7 +598,7 @@ input.checkbox:checked:after {
   }
 
   .main-w3layouts {
-    padding: 2em 0 1em;
+    padding: 6em 0 1em 0;
   }
 }
 
@@ -778,3 +782,5 @@ input.checkbox:checked:after {
     padding: 1em 0 0;
   }
 }
+
+@media only screen and (max-width: )

@@ -1,38 +1,135 @@
 <!-- Just an image -->
-<nav class="navbar ">
-    <div class="container">
-        <a class="navbar-brand" routerLink="/">
-            <img src="assets/images/logo.png" width="30" height="30" alt="">
-          </a>
+<header class="navigation-wrap bg-light start-header start-style" id="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
+                    <ul>
+                        <li><a target="__blank" href="https://www.facebook.com/poslitesoftware/"><i class="fa fa-facebook"></i> Follow us on Facebook</a></li> 
+                    </ul>
+            </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
+                    <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
+                    <a href="mailto:sales@poslitesoftware.com">sales@poslitesoftware.com</a>				
+                </div>
+            </div>			  					
+        </div>
     </div>
-</nav>
+    <div class="container main-menu" >
+        <div class="row">
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand"  routerLink="/"><img src="assets/images/logo.png" alt=""></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="mainnav" > 
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li> 
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" [routerLink]="['/blog']" onclick="window.scrollTo(0, 0)">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right" >
+                        <a target="__blank" href="https://demo.poslitesoftware.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header> 
+ 
 
 <div class="main-wrapper">
     <div class="main-w3layouts wrapper">
-        <h1>Sign Up Free Trial</h1>
+        <header>
+            <h1>Sign Up</h1>
+            <p>Fill up the form below to start your 14 days trial</p>
+        </header>
         <div class="main-agileinfo">
             <div class="agileits-top">
-                <form action="#" method="post">
-                    <input class="text" type="text" name="Username" placeholder="Username" required="">
-                    <input class="text email" type="email" name="email" placeholder="Email" required="">
-                    <input class="text" type="password" name="password" placeholder="Password" required="">
-                    <input class="text w3lpass" type="password" name="password" placeholder="Confirm Password" required="">
-                    <div class="wthree-text">
-                        <label class="anim">
-                            <input type="checkbox" class="checkbox" required="">
-                            <span>I Agree To The Terms & Conditions</span>
-                        </label>
-                        <div class="clear"> </div>
-                    </div>
-                    <input type="submit" value="SIGNUP">
-                </form>
-                <p>Don't have an Account? <a href="#"> Login Now!</a></p>
+                <div class="form-wrapper" *ngIf="!success">
+                    <form [formGroup]="signupForm" id="signupForm" (ngSubmit)="onSubmit(signupForm.value)" novalidate>
+                        <div class="form-group">
+                            <input 
+                            class="text" 
+                            type="text"   
+                            placeholder="First Name" 
+                            required
+                            formControlName="fname">
+                            <small class="text-danger" [class.d-none]="signupForm.controls.fname.valid || !formSubmitted">First name is required</small>
+                        </div>
+ 
+                        <div class="form-group">
+                            <input 
+                            class="text w3lpass" 
+                            type="text"  
+                            placeholder="Last Name" 
+                            required=""
+                            formControlName="lname">
+                            <small class="text-danger" [class.d-none]="signupForm.controls.lname.valid || !formSubmitted">Last name is required</small>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input 
+                            class="text email" 
+                            type="email"  
+                            placeholder="Email" 
+                            required=""
+                            formControlName="email">
+                            <small class="text-danger" [class.d-none]="signupForm.controls.email.valid || !formSubmitted">Invalid Email</small>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input class="text" 
+                            type="text"  
+                            placeholder="Contact Number" 
+                            required=""
+                            formControlName="contact"> 
+                            <small class="text-danger" [class.d-none]="signupForm.controls.contact.valid || !formSubmitted">Contact Number is required</small>
+                        </div> 
+                        <br>  
+                        <div class="wthree-text">
+                            <label class="anim">
+                                <input 
+                                    type="checkbox" 
+                                    class="checkbox" 
+                                    required="" 
+                                    formControlName="agree"
+                                >
+                                <span> &nbsp;I Agree To The Terms & Conditions</span>
+                            </label>
+                            <div class="clear"> </div>
+                            <small class="text-danger" [class.d-none]="signupForm.controls.agree.valid || !formSubmitted">you must agree to our terms of conditions</small>
+                        </div>
+                        <input type="submit" value="SIGNUP">
+                    </form>
+                    <p>We value your privacy and do not share your personal details with anyone</p>
+                </div>
+
+                <div *ngIf="success">
+                    <p class="lead">Thank you for signing up!</p>
+                    <p>Please check your inbox a POSLite trial version is sent on your email.</p>
+                     
+                </div>
             </div>
-        </div>
-    
-        <div class="colorlibcopy-agile">
-            <p>© 2020 POSLite. All rights reserved</p>
-        </div>
+        </div> 
         
         <ul class="colorlib-bubbles">
             <li></li>
@@ -49,4 +146,9 @@
     </div>
 </div>
  
+
+<footer class="footer-area section-gap text-center">
+    <p>&copy; Copryright 2019 - Product by <a target="__blank" href="https://algermakiputin.github.io/portfolio/">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>
+</footer>
+
   
