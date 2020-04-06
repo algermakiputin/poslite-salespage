@@ -1,1 +1,10 @@
 
+.block-text {
+
+    min-height: 233px;
+}
+
+.generic_price_tag s {
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.3);
+}

@@ -3,15 +3,20 @@ import { Enquiries } from '../enquiries';
 import { EnquiriesService } from '../enquiries.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
+declare const navbar_spyscroll: any;
+declare const start_counter: any;
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'] 
+  styleUrls: ['./home.component.css'],
+ 
 })
 export class HomeComponent implements OnInit {
 
   loading = false;
   enquirySent = false;
+
   calculator = {
     calculated: false,
     businessSize: 0,
@@ -22,36 +27,34 @@ export class HomeComponent implements OnInit {
   }; 
 
   sending = false;
+  formSubmitted = false;
   businessSize = [7800, 14999, 23999];
   inventorySize = [5999, 11999, 17800];
   platform = [5200, 10000];
   
   enquiriesModel = new Enquiries("", "", "", "");
+  contactUsForm;
 
-  constructor( private _enquiryService: EnquiriesService ) { }
+  constructor( private _enquiryService: EnquiriesService ) {
+
+    this.contactUsForm = new FormGroup({
+      name: new FormControl(),
+      email: new FormControl(),
+      contact: new FormControl(),
+      message: new FormControl() 
+    });
+
+  }
 
   ngOnInit() { 
-    
+     
+    navbar_spyscroll();
+    start_counter();
+   
   }
 
 
-  calculate() { 
-    // Business Size: 
-    // 0 = 5000
-    // 1 = 10,999
-    // 2 = 15,999
-
-    // Inventory Size
-    // 0 = 3999
-    // 1 = 8999
-    // 2 = 12800
-
-    // Platform
-    // 0 = 2000
-    // 1 = 6000
-
-    // After Sales Support
-    // Free = 0      
+  calculate() {  
     
     this.loading = true;
 
@@ -67,8 +70,10 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(form) { 
-  
-    this.sending = true;
+
+    this.formSubmitted = true;
+    this.sending = true; 
+    
     this._enquiryService.enroll(this.enquiriesModel)
       .subscribe(
         data => {
@@ -80,8 +85,7 @@ export class HomeComponent implements OnInit {
           console.log(error)
         }
 
-      );
-
+      ); 
     
   }
 }

@@ -9,20 +9,20 @@
             </div>
                 <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
                     <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
-                    <a href="mailto:dev.algermakiputin@gmail.com">dev.algermakiputin@gmail.com</a>				
+                    <a href="mailto:sales@poslitesoftware.com">sales@poslitesoftware.com</a>				
                 </div>
             </div>			  					
         </div>
     </div>
-    <div class="container main-menu">
+    <div class="container main-menu" >
         <div class="row">
             <div class="col-12">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <a class="navbar-brand"  href="/"><img src="assets/images/logo.png" alt=""></a>
+                    <a class="navbar-brand"  routerLink="/"><img src="assets/images/logo.png" alt=""></a>
                     <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                    <div class="navbar-collapse collapse" id="mainnav"> 
+                    <div class="navbar-collapse collapse" id="mainnav" > 
                         <ul class="navbar-nav ml-auto py-4 py-md-0">
                         
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 menu-active">
@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                     <div class="navbar-right" >
-                        <a target="__blank" href="https://poslite.herokuapp.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
+                        <a target="__blank" href="https://demo.poslitesoftware.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
                     </div>
                 </nav>
             </div>
@@ -68,10 +68,7 @@
                         </div> 
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="./assets/images/header/graph.jpg" alt="First slide">
-                        </div> 
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="./assets/images/header/login.jpg" alt="First slide">
-                        </div>
+                        </div>  
                     </div>
                 </div>
                 <img class="img-fluid carousel-frame " src="./assets/images/computer.png" alt="">
@@ -454,7 +451,8 @@
                                 <!--//HEAD CONTENT END-->
                                 
                                 <!--PRICE START-->
-                                <div class="generic_price_tag clearfix">    
+                                <div class="generic_price_tag clearfix">  
+                                    <s>₱10,999</s>
                                     <span class="price">
                                         <span class="sign">₱</span>
                                         <span class="currency">5,999</span>
@@ -502,7 +500,8 @@
                                         <span>silver</span>
                                     </div> 
                                 </div> 
-                                <div class="generic_price_tag clearfix">    
+                                <div class="generic_price_tag clearfix">
+                                    <s>₱21,599</s>
                                     <span class="price">
                                         <span class="sign">₱</span>
                                         <span class="currency">15,999</span>
@@ -545,7 +544,8 @@
                                         <span>Gold</span>
                                     </div> 
                                 </div> 
-                                <div class="generic_price_tag clearfix">    
+                                <div class="generic_price_tag clearfix"> 
+                                    <s>₱37,999</s>   
                                     <span class="price">
                                         <span class="sign">₱</span>
                                         <span class="currency">28,999</span>
@@ -622,7 +622,7 @@
         <p class="lead">For question about POSLite, we're ready to assist.</p>
     </header>
     <div class="container"> 
-        <form name="contactForm"  class="row input-container" #contactForm="ngForm"  (ngSubmit)="contactForm.form.valid && onSubmit(contactForm)" novalidate> 
+        <form name="contactForm"  class="row input-container" #contactForm="ngForm"  (ngSubmit)="onSubmit(contactForm)" novalidate> 
             <div class="col-md-12 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="styled-input wide">
                     <input type="text" id="name" 
@@ -630,18 +630,17 @@
                         [class.is-invalid]="name.invalid && name.touched"  
                         name="name" #name="ngModel" 
                         [(ngModel)]="enquiriesModel.name"  
-                        required
-                         
+                        required 
                     />
                     <label>Name</label>  
-                    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                    <small class="text-danger" [class.d-none]="name.valid || !formSubmitted">Name is required</small>
                 </div> 
             </div>
             <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="styled-input">
                     <input type="email" email [class.is-invalid]="email.invalid && email.touched" required name="email" #email="ngModel" [(ngModel)]="enquiriesModel.email"/>
                     <label>Email</label> 
-                    <small class="text-danger" [class.d-none]="email.valid || email.untouched">Invalid email</small>
+                    <small class="text-danger" [class.d-none]="email.valid || !formSubmitted">Invalid email</small>
                 </div>
             </div>
             <div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
@@ -653,18 +652,19 @@
                     autocomplete="number"  
                     />
                     <label>Contact Number</label> 
-                    <small class="text-danger" [class.d-none]="number.valid || number.untouched">Phone number is required</small>
+                    <small class="text-danger" *ngIf="formSubmitted && !number.valid">Phone number is required</small>
+             
                 </div>
             </div>
             <div class="col-md-12 wow fadeInUp" data-wow-delay="0.8s">
                 <div class="styled-input wide">
                     <textarea required [class.is-invalid]="message.invalid && message.touched" name="message" #message="ngModel" [(ngModel)]="enquiriesModel.message"></textarea>
                     <label>Message</label>
-                    <small class="text-danger" [class.d-none]="message.valid || message.untouched">Message is required</small>
+                    <small class="text-danger" [class.d-none]="message.valid || !formSubmitted">Message is required</small>
                 </div>
             </div>
             <div class="col-md-12 wow fadeInUp" data-wow-delay="1.2s">
-                <input type="submit" [disabled]="!contactForm.form.valid"  [disabled]="sending" class="btn-lrg submit-btn" value="Send Message" style="max-width: 200px;">  
+                <input type="submit"  class="btn-lg submit-btn" value="Send Message" style="max-width: 200px;">  
             </div>
         </form> 
     </div>
