@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class SignupService {
 
-  _url = 'http://localhost/salespage/user_signup.php';
+  _url = 'https://poslitesoftware.com/mail/mailer.php';
   constructor(private _http: HttpClient) { }
 
   enroll(data) { 

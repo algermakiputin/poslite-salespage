@@ -8,3 +8,12 @@
     font-size: 24px;
     color: rgba(0, 0, 0, 0.3);
 }
+
+.trial_btn {
+    border-radius: 2.5px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-weight: bold;
+}

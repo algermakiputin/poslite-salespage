@@ -54,8 +54,7 @@
         </div>
     </div>
 </header> 
- 
-
+  
 <div class="main-wrapper">
     <div class="main-w3layouts wrapper">
         <header>
@@ -116,7 +115,7 @@
                                 <span> &nbsp;I Agree To The Terms & Conditions</span>
                             </label>
                             <div class="clear"> </div>
-                            <small class="text-danger" [class.d-none]="signupForm.controls.agree.valid || !formSubmitted">you must agree to our terms of conditions</small>
+                            <small class="text-danger" [class.d-none]="signupForm.controls.agree.valid || !formSubmitted">you must agree to our <a style="z-index: 999;" routerLink="/terms-condition">terms of service</a></small>
                         </div>
                         <input type="submit" value="SIGNUP">
                     </form>
