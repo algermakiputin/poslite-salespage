@@ -47,7 +47,7 @@
                         </ul>
                     </div>
                     <div class="navbar-right" >
-                        <a target="__blank" href="https://demo.poslitesoftware.com" class="btn btn-primary" style="border-radius:3.5px;text-transform: uppercase;padding-left: 20px;padding-right: 20px;text-align: center;">UNLIMITED TRIAL ACCESS</a>
+                        <a routerLink="/signup" onclick="window.scrollTo(0, 0)" class="btn btn-primary trial_btn">FREE 14 DAYS TRIAL</a>
                     </div>
                 </nav>
             </div>
@@ -93,6 +93,7 @@
                             required=""
                             formControlName="email">
                             <small class="text-danger" [class.d-none]="signupForm.controls.email.valid || !formSubmitted">Invalid Email</small>
+                            <small class="text-danger" [class.d-none]="!email_exist">Email already in used</small>
                         </div>
                     
                         <div class="form-group">
@@ -112,12 +113,12 @@
                                     required="" 
                                     formControlName="agree"
                                 >
-                                <span> &nbsp;I Agree To The Terms & Conditions</span>
+                                <span> &nbsp;I Agree To The <a [routerLink]="['/terms-conditions']" >Terms & Conditions</a></span>
                             </label>
                             <div class="clear"> </div>
-                            <small class="text-danger" [class.d-none]="signupForm.controls.agree.valid || !formSubmitted">you must agree to our <a style="z-index: 999;" routerLink="/terms-condition">terms of service</a></small>
+                            <small class="text-danger" [class.d-none]="signupForm.controls.agree.valid || !formSubmitted">you must agree to our terms of service</small>
                         </div>
-                        <input type="submit" value="SIGNUP">
+                        <button type="submit" [class.spinner]="loading" [disabled]="loading" >SIGNUP</button>
                     </form>
                     <p>We value your privacy and do not share your personal details with anyone</p>
                 </div>

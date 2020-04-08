@@ -7,7 +7,7 @@ import { Enquiries } from './enquiries';
 })
 export class EnquiriesService {
 
-  _url = 'https://poslitesoftware.com/poslite/';
+  _url = 'https://poslitesoftware.com/poslite/index.php';
   constructor(private _http: HttpClient) { }
 
   enroll(enquiries: Enquiries) { 

@@ -46,7 +46,7 @@
                         </ul>
                     </div>
                     <div class="navbar-right" >
-                        <a target="__blank" href="https://demo.poslitesoftware.com" class="btn btn-primary trial_btn">FREE 14 DAYS TRIAL</a>
+                        <a routerLink="/signup" onclick="window.scrollTo(0, 0)" class="btn btn-primary trial_btn">FREE 14 DAYS TRIAL</a>
                     </div>
                 </nav>
             </div>
@@ -468,8 +468,7 @@
                             <div class="generic_feature_list">
                                 <ul>
                                     <li>Up to <span>200</span> Products</li>
-                                    <li><span>200</span> Customers</li>
-                                    <li><span>15</span> Categories</li>
+                                    <li><span>200</span> Customers</li> 
                                     <li><span>Barcode Support</span> No</li>
                                     <li><span>Advance Pricing Support</span> No</li>
                                     <li><span>Database Backup</span> No</li>
@@ -513,8 +512,7 @@
                             <div class="generic_feature_list">
                                 <ul>
                                     <li>Up to <span>2000</span> Products</li>
-                                    <li><span>2000</span> Customers</li>
-                                    <li><span>50</span> Categories</li>
+                                    <li><span>2000</span> Customers</li> 
                                     <li><span>Barcode Support</span> YES</li>
                                     <li><span>Advance Pricing Support</span> YES</li>
                                     <li><span>Database Backup</span> YES</li>
@@ -557,8 +555,7 @@
                             <div class="generic_feature_list">
                                 <ul>
                                     <li><span>Unlimited</span> Products</li>
-                                    <li><span>Unlimited</span> Customers</li>
-                                    <li><span>Unlimited</span> Categories</li>
+                                    <li><span>Unlimited</span> Customers</li> 
                                     <li><span>Barcode Support</span> YES</li>
                                     <li><span>Advance Pricing Support</span> YES</li>
                                     <li><span>Database Backup</span> YES</li>
@@ -663,8 +660,8 @@
                     <small class="text-danger" [class.d-none]="message.valid || !formSubmitted">Message is required</small>
                 </div>
             </div>
-            <div class="col-md-12 wow fadeInUp" data-wow-delay="1.2s">
-                <input type="submit"  class="btn-lg submit-btn" value="Send Message" style="max-width: 200px;">  
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="1.2s"> 
+                <button type="submit"  class="btn-lg submit-btn spinner" [class.spinner]="loading" [disabled]="loading" style="max-width: 200px;">Send Message</button>
             </div>
         </form> 
     </div>

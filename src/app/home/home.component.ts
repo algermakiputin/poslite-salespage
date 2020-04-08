@@ -15,7 +15,7 @@ declare const start_counter: any;
 export class HomeComponent implements OnInit {
 
   loading = false;
-  enquirySent = false;
+  enquirySent = false; 
 
   calculator = {
     calculated: false,
@@ -71,21 +71,27 @@ export class HomeComponent implements OnInit {
 
   onSubmit(form) { 
 
-    this.formSubmitted = true;
-    this.sending = true; 
+    this.formSubmitted = true; 
+    this.loading = true;
+
+    if ( form.form.valid ) {
     
-    this._enquiryService.enroll(this.enquiriesModel)
+      this._enquiryService.enroll(this.enquiriesModel)
       .subscribe(
         data => {
-          this.sending = false; 
+          
           this.enquirySent = true;
+          this.loading = true;
         },
         error => {
-          this.sending = false;
-          console.log(error)
+          this.loading = true;
         }
 
-      ); 
+      );
+    }else {
+      this.loading = false;
+    }
+ 
     
   }
 }

@@ -12,6 +12,8 @@ export class SignupComponent implements OnInit {
   signupForm;
   formSubmitted = false;
   success = false;
+  email_exist = false;
+  loading = false;
   
   constructor( private FormBuilder: FormBuilder, private signupService: SignupService ) {
 
@@ -31,22 +33,36 @@ export class SignupComponent implements OnInit {
 
   onSubmit(userData) {   
     this.formSubmitted = true;
-
-    if ( this.signupForm.valid ) {
-     
-      this.signupForm.reset();
-      this.success = true; 
+    this.loading = true;
+    
+    if ( this.signupForm.valid ) { 
+   
       this.signupService.enroll(userData)
       .subscribe(
         data => {
-          console.log(data);
+          if (data == 0) {
+            this.email_exist = true; 
+
+          }else {
+            this.signupForm.reset();
+            this.success = true; 
+            console.log(data);
+          }
+          this.loading = false;
         },
         error => { 
-          console.log(error)
+          this.loading = false;
         }
-
+        
       );
-    } 
+      
+
+      
+    } else {
+      this.loading = false;
+    }
+
+    
  
   }
 

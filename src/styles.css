@@ -5,3 +5,36 @@ html, body {
     margin: 0px;
     scroll-behavior: smooth;
 }
+
+.trial_btn {
+    border-radius: 2.5px;
+    text-transform: uppercase;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+
+.spinner {
+    position: relative;
+}
+   
+.spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    border-top-color: #000000;
+    animation: spinner .8s linear infinite;
+  }
