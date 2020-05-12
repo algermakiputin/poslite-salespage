@@ -26,6 +26,58 @@ export class HomeComponent implements OnInit {
     total: 0
   }; 
 
+
+  reviews = [
+    {
+      title: "Magandang Gamitin sa Negosyo",
+      ratings: 5,
+      reviews: "Magandang gamitin sa negosyo, madali intindihin (simple), Sila na ang nag install through AnyDesk, sulit at efective rekomendado ko ito",
+      image: "assets/images/reviews/ian.jpg",
+      name: "Ian Atienza",
+      address: "Lipa City, Batangas",
+    },
+    { 
+      title: "Convenient and pretty well done",
+      ratings: 5,
+      reviews: "I requested for additional feature like a purchase order system, had to pay for additional functions but worth it to keep track of my orders.",
+      image: "assets/images/reviews/james.jpg",
+      name: "James Buenviaje",
+      address: "Naga City, Philippines"
+    },
+    { 
+      title: "Has a Great aftersales support",
+      ratings: 5,
+      reviews: "Very accomodating with a great aftersales service. the software is very easy to use and it helps me a lot to monitor my inventory and sales.",
+      image: "assets/images/reviews/edmund.jpg",
+      name: "Edmund Lai",
+      address: "Taguig City, Metro Manila"
+    },
+    { 
+      title: "User-friendly for our store",
+      ratings: 5,
+      reviews: "Legit and user friendly for our grocery store. When I logged in to the system, I can easily find all the features I need, no need long hours for training my cashiers.",
+      image: "assets/images/reviews/charles.jpg",
+      name: "Charles Dave Varela",
+      address: "Navotas City, Metro Manila"
+    },
+    { 
+      title: "Great After Sales Support and Use-friendly",
+      ratings: 5,
+      reviews: "They are very fast to act on my concern and the software is pretty straightforward, user friendly. and easy to use even the ordinary staff can follow through.",
+      image: "assets/images/reviews/arnel.jpg",
+      name: "Arnel Supan",
+      address: "San Fernando City, Pampanga"
+    },
+    { 
+      title: "Magandang Gamitin for Motorcycle Parts Shop",
+      ratings: 5,
+      reviews: "Maganda gamitin ang Poslite sa motorcycle parts madaling intindihin walang hassle , pag may question ako, mabilis ang kanilang support. More Thanks",
+      image: "assets/images/reviews/kareen.jpg",
+      name: "Kareen Flores",
+      address: "Metro Manila"
+    }
+  ]
+
   sending = false;
   formSubmitted = false;
   businessSize = [7800, 14999, 23999];

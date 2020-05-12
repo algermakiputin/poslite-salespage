@@ -113,7 +113,7 @@
     color: #626262;
     font-size: 14px;
     margin-top: 27px;
-    padding: 20px 23px;
+    padding: 20px 23px; 
 }
 .block-text a {
  color: #7d4702;
@@ -228,7 +228,9 @@ header .lead {
 
 
 #pricing {
-	padding: 100px 0;
+    background-color: #f0eded;
+    padding: 100px 0;
+
 }
 
 #divider header {
@@ -566,8 +568,14 @@ textarea.is-invalid
         float:none;
     }
 
+    
+
 }
 
+.footer-area {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 
 html {
 	scroll-behavior: smooth;
@@ -679,13 +687,12 @@ input[type="submit"]:disabled {
 	}
 }
 
-
-
-body{background-color:#eee;}
+ 
 
 #generic_price_table{
     background-color: #f0eded;
 }
+
 
 /*PRICE COLOR CODE START*/
 #generic_price_table .generic_content{

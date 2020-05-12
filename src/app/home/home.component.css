@@ -9,3 +9,33 @@
     color: rgba(0, 0, 0, 0.3);
 }
 
+#reviews {
+    background-image: url('../../assets/images/reviews.jpeg');
+    background-position-y:-102px
+}
+
+#reviews .content {
+    background-color: rgba(0,0,0,0.85);
+    padding: 100px 0;
+}
+
+#reviews-for-mobile {
+    padding: 0 20px;
+}
+
+@media only screen and (max-width:581px) {
+    #reviews-for-desktop {
+        display: none;
+    }
+    .block-text {
+        min-height: 232px!important;
+        max-height: 233px;
+    }
+}
+
+@media only screen and (min-width: 580px) {
+
+    #reviews-for-mobile {
+        display: none;
+    }
+} 
