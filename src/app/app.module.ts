@@ -12,6 +12,8 @@ import { BlogComponentComponent } from './blog-component/blog-component.componen
 import { SinglePageBlogComponentComponent } from './single-page-blog-component/single-page-blog-component.component';
 import { SignupComponent } from './signup/signup.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { PaymentComponent } from './payment/payment.component';
+import { ThankyouComponent } from './thankyou/thankyou.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
     BlogComponentComponent,
     SinglePageBlogComponentComponent,
     SignupComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    PaymentComponent,
+    ThankyouComponent
   ],
   imports: [
     BrowserModule,

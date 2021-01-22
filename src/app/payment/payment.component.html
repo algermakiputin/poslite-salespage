@@ -1,0 +1,105 @@
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a class="logo"  routerLink="/"><img src="assets/images/logo.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+    
+</header>
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Checkout</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+
+    <div class="container">
+        <form [formGroup]="customerForm" novalidate id="customerForm">
+        <div class="row">
+            <div class="col-md-8">
+            
+                <legend>Billing Details</legend>
+                <div class="form-row">
+                    <div class="col">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="fname">
+                        <small class="text-danger d-none" [class.d-none]="customerForm.controls.fname.valid || !formSubmitted">First name is required</small>
+             
+                    </div>
+                    <div class="col">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" formControlName="lname">
+                        <small class="text-danger" [class.d-none]="customerForm.controls.lname.valid || !formSubmitted">Last name is required</small>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                    <small class="text-danger" [class.d-none]="customerForm.controls.email.valid || !formSubmitted">Email is required</small>
+                </div>
+                <div class="form-group">
+                    <label>Order Notes (Optional)</label>
+                    <textarea class="form-control" formControlName="message"></textarea>
+                </div> 
+        </div>
+        <div class="col-md-4">
+            <legend>Your Order</legend>
+            <table class="table table-striped" id="order-details">
+                <tr>
+                    <th>Product</th>
+                    <th>Total</th>
+                </tr>
+                <tr>
+                    <td>POSLite Gold</td>
+                    <td>25,999</td>
+                </tr>
+                <tr>
+                    <td>Sub total</td>
+                    <td>25,999</td>
+                </tr>
+                <tr>
+                    <td>Total</td>
+                    <td>25,999</td>
+                </tr>
+            </table> 
+            <div id="paypal"></div>
+        </div>
+        </div>
+        </form>
+    </div>
+</main>
+<style>
+    header {
+        padding: 20px 0;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+    }
+
+    .logo img {
+        width: 120px;;
+    }
+
+    .page-title { 
+        background-color: #2F80ED;
+        color: #fff;
+    }
+
+    .page-title h1 {
+        color: #fff;
+        padding: 15px 0;
+        font-size: 28px;
+    }
+    main {
+        padding: 60px 0;
+    }
+
+    #order-details {
+        border-bottom: solid 1px #eee;
+    }
+</style>
