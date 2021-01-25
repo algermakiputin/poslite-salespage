@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Enquiries } from '../enquiries';
 import { EnquiriesService } from '../enquiries.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from "@angular/router";
 
 declare const navbar_spyscroll: any;
 declare const start_counter: any;
@@ -87,7 +89,7 @@ export class HomeComponent implements OnInit {
   enquiriesModel = new Enquiries("", "", "", "");
   contactUsForm;
 
-  constructor( private _enquiryService: EnquiriesService ) {
+  constructor( private _enquiryService: EnquiriesService, private cookieService: CookieService, private router: Router ) {
 
     this.contactUsForm = new FormGroup({
       name: new FormControl(),
@@ -119,6 +121,29 @@ export class HomeComponent implements OnInit {
     }, 1500);
      
   
+  }
+
+  buyNow( key ) {
+
+    let options = [
+      {
+        'version' : 'Bronze',
+        'price' : 5999
+      },
+      {
+        'version' : 'Silver',
+        'price' : 10999
+      },
+      {
+        'version' : 'Gold',
+        'price' : 15999
+      }
+    ];
+
+    this.cookieService.set('cart',JSON.stringify(options[key]));
+
+    this.router.navigate(['/checkout']);
+    
   }
 
   onSubmit(form) { 

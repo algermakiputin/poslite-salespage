@@ -14,6 +14,7 @@ import { SignupComponent } from './signup/signup.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
+import { CookieService } from "ngx-cookie-service";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { ThankyouComponent } from './thankyou/thankyou.component';
     ReactiveFormsModule,
     FacebookModule.forRoot()
   ],
-  providers: [],
+  providers: [CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

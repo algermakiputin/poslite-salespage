@@ -21,6 +21,7 @@
     "@angular/router": "~8.2.14",
     "@babel/compat-data": "^7.8.0",
     "jquery": "^3.4.1",
+    "ngx-cookie-service": "^11.0.2",
     "ngx-facebook": "^2.4.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

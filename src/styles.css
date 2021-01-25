@@ -15,6 +15,10 @@ html, body {
     font-weight: bold;
 }
 
+.buynow:hover {
+    cursor: pointer;
+}
+
 @keyframes spinner {
     to {transform: rotate(360deg);}
   }

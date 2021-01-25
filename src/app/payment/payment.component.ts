@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { PaymentService } from '../payment.service';
-import { Router } from "@angular/router"
+import { Router } from "@angular/router";
+import { CookieService } from 'ngx-cookie-service';
 
 declare var paypal;
 
@@ -20,35 +21,51 @@ export class PaymentComponent implements OnInit {
   formSubmitted = false;
   customerForm;
 
-  constructor( private FormBuilder: FormBuilder, private paymentService: PaymentService, private router: Router ) { 
+  constructor( 
+    private FormBuilder: FormBuilder, 
+    private paymentService: PaymentService, 
+    private router: Router, 
+    private cookieService: CookieService 
+    
+    ) { 
+
+    const cookieExist = this.cookieService.check('cart'); 
+    let cart = JSON.parse(this.cookieService.get("cart"));
+
+    if ( !cookieExist )
+      this.router.navigate(["/"]);
 
     this.customerForm = this.FormBuilder.group({
       'fname': new FormControl('', [Validators.required]),
       'lname': new FormControl('', [Validators.required]),
       'email': new FormControl('', [Validators.required]),
       'message': new FormControl('', []),
-      'description' : "POSLite",
-      'total' : 25999
+      'description' : cart.version,
+      'total' : cart.price
     });
   }
 
   ngOnInit() {
- 
+
+    
+    
+
     paypal.Buttons({  
       onInit: (data, actions) => {
 
-        // if ( !this.customerForm.valid) {
-        //   actions.disable();
+        if ( !this.customerForm.valid) {
+          actions.disable();
 
-        // }else {
-        //   actions.enable();
+        }else {
+          actions.enable();
 
-        // }
+        }
 
       },
       createOrder: function(data, actions) {
 
-        console.log(data)
+        
+
         return actions.order.create({
           purchase_units: [{
             amount: {
