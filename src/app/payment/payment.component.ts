@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
 
   formSubmitted = false;
   customerForm;
+  cart;
 
   constructor( 
     private FormBuilder: FormBuilder, 
@@ -30,7 +31,7 @@ export class PaymentComponent implements OnInit {
     ) { 
 
     const cookieExist = this.cookieService.check('cart'); 
-    let cart = JSON.parse(this.cookieService.get("cart"));
+    this.cart = JSON.parse(this.cookieService.get("cart"));
 
     if ( !cookieExist )
       this.router.navigate(["/"]);
@@ -40,37 +41,36 @@ export class PaymentComponent implements OnInit {
       'lname': new FormControl('', [Validators.required]),
       'email': new FormControl('', [Validators.required]),
       'message': new FormControl('', []),
-      'description' : cart.version,
-      'total' : cart.price
+      'description' : this.cart.version,
+      'total' : this.cart.price
     });
   }
 
-  ngOnInit() {
-
-    
+  ngOnInit() { 
     
 
     paypal.Buttons({  
       onInit: (data, actions) => {
 
-        if ( !this.customerForm.valid) {
-          actions.disable();
+        actions.disable();
 
-        }else {
-          actions.enable();
+        this.customerForm.statusChanges
+                .subscribe(
+                  result => {
+                    if (result == "VALID")
+                      return actions.enable();
 
-        }
-
+                    return actions.disable();
+                  }
+              ); 
       },
-      createOrder: function(data, actions) {
-
-        
-
+      createOrder: (data, actions) => {
+ 
         return actions.order.create({
           purchase_units: [{
             amount: {
-              currency_code: "USD",
-              value: "110.00" 
+              currency_code: "PHP",
+              value: this.cart.price 
               },
         
             }],
@@ -87,7 +87,7 @@ export class PaymentComponent implements OnInit {
         this.paymentService.enroll(this.customerForm.value)
           .subscribe(
             data => {
-              
+              this.cookieService.set("order_number", data.order_number);
               this.router.navigate(['/thankyou']);
             },
             error => { 
@@ -100,19 +100,15 @@ export class PaymentComponent implements OnInit {
           
         });
       },
-      onClick : (data, actions) => {
-
-        console.log(this.customerForm.value);
-
-        this.formSubmitted = true;
-        if ( !this.customerForm.valid ) {
+      onClick : (data, actions) => { 
         
-        }
+        this.formSubmitted = true;
          
       }
       
     })
     .render("#paypal");
+ 
   }
 
 }

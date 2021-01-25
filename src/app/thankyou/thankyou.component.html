@@ -58,12 +58,14 @@
   <main style="margin-top: 130px; padding: 80px 0;">
     <div class="well">
         <div class="container">
-            <h1 class="text-center">Thanks! <br> You're all set.</h1>
-           
-            <p class="text-center lead">A confirmation has been sent to your email. <br>Your order 10050025 will be sent to your email within 24 hours.</p>
-            <div>
-                <p class="text-center">Let's Keep In Touch </p>
-            </div>
+            <article class="content">
+                <h1 class="text-center">Thanks! <br> You're all set.</h1>
+            
+                <p class="text-center lead">A confirmation has been sent to your email. <br>Your order {{ order_number}} will be sent to your email within 24 hours.</p>
+                <div>
+                    <p class="text-center">Let's Keep In Touch </p>
+                </div>
+            </article>
         </div>
     </div>
   </main>
@@ -75,6 +77,11 @@
 
       main p {
           line-height: 26px;
+      }
+
+      main .content {
+          padding: 80px 0 120px 0;
+          background-color: #f4f4f5;
       }
   </style>
 

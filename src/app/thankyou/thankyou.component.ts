@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-thankyou',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ThankyouComponent implements OnInit {
 
-  constructor() { }
+  order_number;
+
+  constructor(private cookieService: CookieService, private router: Router) { 
+
+    if ( !cookieService.check("order_number") )
+      return router.navigate(['/']);
+
+    this.order_number = cookieService.get("order_number");
+
+    cookieService.deleteAll();
+  }
 
   ngOnInit() {
+
+
   }
 
 }

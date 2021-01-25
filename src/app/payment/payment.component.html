@@ -1,13 +1,58 @@
-<header>
-    <div class="container">
+<header class="navigation-wrap bg-light start-header start-style" id="header">
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6 col-sm-6 col-4 header-top-left no-padding">
+                    <ul>
+                        <li><a target="__blank" href="https://www.facebook.com/poslitesoftware/"><i class="fa fa-facebook"></i> Follow us on Facebook</a></li> 
+                    </ul>
+            </div>
+                <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
+                    <a href="tel:+639 56 088 7535">+639 56 088 7535</a>
+                    <a href="mailto:sales@poslitesoftware.com">sales@poslitesoftware.com</a>				
+                </div>
+            </div>			  					
+        </div>
+    </div>
+    <div class="container main-menu" >
         <div class="row">
-            <div class="col-md-12">
-                <a class="logo"  routerLink="/"><img src="assets/images/logo.png" alt=""></a>
+            <div class="col-12">
+                <nav class="navbar navbar-expand-md navbar-light">
+                    <a class="navbar-brand"  routerLink="/"><img src="assets/images/logo.png" alt=""></a>
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#mainnav" aria-controls="mainnav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse" id="mainnav" > 
+                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 menu-active">
+                                <a class="nav-link" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#features">Features</a>
+                            </li> 
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#reviews">Reviews</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#pricing">Pricing</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                <a class="nav-link" [routerLink]="['/blog']" onclick="window.scrollTo(0, 0)">Blog</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="navbar-right" >
+                        <a routerLink="/signup" onclick="window.scrollTo(0, 0)" class="btn btn-primary trial_btn">FREE 14 DAYS TRIAL</a>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>
-    
-</header>
+  </header> 
 <div class="page-title">
     <div class="container">
         <div class="row">
@@ -20,61 +65,71 @@
 <main>
 
     <div class="container">
+        <h1>Checkout</h1>
+        <br><br>
         <form [formGroup]="customerForm" novalidate id="customerForm">
         <div class="row">
             <div class="col-md-8">
             
                 <legend>Billing Details</legend>
-                <div class="form-row">
-                    <div class="col">
-                        <label>First Name</label>
-                        <input type="text" class="form-control" formControlName="fname">
-                        <small class="text-danger d-none" [class.d-none]="customerForm.controls.fname.valid || !formSubmitted">First name is required</small>
-             
+                <fieldset>
+                    <div class="form-row form-group">
+                        <div class="col">
+                            <label>First Name</label>
+                            <input type="text" class="form-control" formControlName="fname">
+                            <small class="text-danger d-none" [class.d-none]="customerForm.controls.fname.valid || !formSubmitted">First name is required</small>
+                 
+                        </div>
+                        <div class="col">
+                            <label>Last Name</label>
+                            <input type="text" class="form-control" formControlName="lname">
+                            <small class="text-danger" [class.d-none]="customerForm.controls.lname.valid || !formSubmitted">Last name is required</small>
+                        </div>
+                        
                     </div>
-                    <div class="col">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" formControlName="lname">
-                        <small class="text-danger" [class.d-none]="customerForm.controls.lname.valid || !formSubmitted">Last name is required</small>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="text" class="form-control" formControlName="email">
+                        <small class="text-danger" [class.d-none]="customerForm.controls.email.valid || !formSubmitted">Email is required</small>
                     </div>
-                    
-                </div>
-                <div class="form-group">
-                    <label>Email</label>
-                    <input type="text" class="form-control" formControlName="email">
-                    <small class="text-danger" [class.d-none]="customerForm.controls.email.valid || !formSubmitted">Email is required</small>
-                </div>
-                <div class="form-group">
-                    <label>Order Notes (Optional)</label>
-                    <textarea class="form-control" formControlName="message"></textarea>
-                </div> 
+                    <div class="form-group">
+                        <label>Order Notes (Optional)</label>
+                        <textarea class="form-control" formControlName="message"></textarea>
+                    </div> 
+                </fieldset>
         </div>
         <div class="col-md-4">
-            <legend>Your Order</legend>
-            <table class="table table-striped" id="order-details">
-                <tr>
-                    <th>Product</th>
-                    <th>Total</th>
-                </tr>
-                <tr>
-                    <td>POSLite Gold</td>
-                    <td>25,999</td>
-                </tr>
-                <tr>
-                    <td>Sub total</td>
-                    <td>25,999</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td>25,999</td>
-                </tr>
-            </table> 
-            <div id="paypal"></div>
+            <div id="payment">
+                <legend>Your Order</legend>
+                <table class="table table-striped" id="order-details">
+                    <tr>
+                        <th>Product</th>
+                        <th>Total</th>
+                    </tr>
+                    <tr>
+                    
+                        <td>POSLite {{ this.cart.version }} License</td>
+                        <td>&#8369;{{ this.cart.price | number }}</td>
+                    </tr>
+                    <tr>
+                        <td>Sub total</td>
+                        <td>&#8369;{{ this.cart.price | number }}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>&#8369;{{ this.cart.price | number }}</td>
+                    </tr>
+                </table> 
+                <div id="paypal"></div>
+            </div>
         </div>
         </div>
         </form>
     </div>
 </main>
+<footer class="footer-area section-gap text-center">
+    <p>&copy; Copryright 2019 - Product by <a target="__blank" href="https://algermakiputin.github.io/portfolio/">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>
+  </footer>
 <style>
     header {
         padding: 20px 0;
@@ -85,6 +140,16 @@
         width: 120px;;
     }
 
+    label {
+        font-weight: bold;
+    }
+
+    legend {
+        font-weight: bold; 
+        margin-bottom: 20px;
+        color: #2C2E2F;
+    }
+
     .page-title { 
         background-color: #2F80ED;
         color: #fff;
@@ -92,7 +157,7 @@
 
     .page-title h1 {
         color: #fff;
-        padding: 15px 0;
+        padding: 40px 0;
         font-size: 28px;
     }
     main {
@@ -101,5 +166,10 @@
 
     #order-details {
         border-bottom: solid 1px #eee;
+    }
+
+    #payment {
+        background-color: #fafafa;
+        padding: 20px;;
     }
 </style>
