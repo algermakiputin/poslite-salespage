@@ -73,11 +73,7 @@ export class PaymentComponent implements OnInit {
               value: this.cart.price 
               },
         
-            }],
-            redirect_urls: {
-            return_url: 'http://www.pawelbiernacki.net/PawelBiernackiSklep/Success',
-            cancel_url: 'http://www.pawelbiernacki.net/PawelBiernackiSklep/Cancel'
-            }
+            }] 
 
         });
       },
@@ -87,6 +83,8 @@ export class PaymentComponent implements OnInit {
         this.paymentService.enroll(this.customerForm.value)
           .subscribe(
             data => {
+
+              console.log(data);
               this.cookieService.set("order_number", data.order_number);
               this.router.navigate(['/thankyou']);
             },

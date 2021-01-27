@@ -7,7 +7,7 @@ import { Payment } from './payment';
 })
 export class PaymentService {
 
-  _url = 'http://localhost/salespage/payment.php';
+  _url = 'https://poslitesoftware.com/mail/payment.php';
   constructor(private _http: HttpClient) { }
 
   enroll(data: Payment) { 

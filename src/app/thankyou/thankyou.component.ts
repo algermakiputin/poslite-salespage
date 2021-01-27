@@ -14,7 +14,7 @@ export class ThankyouComponent implements OnInit {
   constructor(private cookieService: CookieService, private router: Router) { 
 
     if ( !cookieService.check("order_number") )
-      return router.navigate(['/']);
+        router.navigate(['/']);
 
     this.order_number = cookieService.get("order_number");
 
