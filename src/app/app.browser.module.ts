@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms'; 
 import { HttpClientModule } from '@angular/common/http'; 
@@ -15,35 +15,20 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
 import { PaymentComponent } from './payment/payment.component';
 import { ThankyouComponent } from './thankyou/thankyou.component';
 import { CookieService } from "ngx-cookie-service";
-import { CommonModule } from '@angular/common';
-import { TransferHttpCacheModule } from '@nguniversal/common';
-import { NgtUniversalModule } from '@ng-toolkit/universal'; 
+import { AppModule } from './app.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    AboutComponent,
-    BlogComponent,
-    HomeComponent,
-    BlogComponentComponent,
-    SinglePageBlogComponentComponent,
-    SignupComponent,
-    TermsConditionsComponent,
-    PaymentComponent,
-    ThankyouComponent
-  ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
     FacebookModule.forRoot(),
-    CommonModule,
-    TransferHttpCacheModule,
-    NgtUniversalModule
+    AppModule,
+    BrowserTransferStateModule
   ],
   providers: [CookieService ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppBrowserModule { }

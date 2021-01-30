@@ -4,6 +4,7 @@ import { EnquiriesService } from '../enquiries.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from "@angular/router";
+import { Meta, Title } from "@angular/platform-browser";
 
 declare const navbar_spyscroll: any;
 declare const start_counter: any;
@@ -89,8 +90,23 @@ export class HomeComponent implements OnInit {
   enquiriesModel = new Enquiries("", "", "", "");
   contactUsForm;
 
-  constructor( private _enquiryService: EnquiriesService, private cookieService: CookieService, private router: Router ) {
-
+  constructor( 
+    private _enquiryService: EnquiriesService, 
+    private cookieService: CookieService, 
+    private router: Router,
+    private meta: Meta,
+    private title: Title
+    
+    ) {
+      
+    this.title.setTitle("POSLite - Inventory Management Software");
+    this.meta.addTags([
+      { 
+        name: 'description', 
+        content: 'Point of Sales and Inventory Management Software for every retailer and wholesaler. Ideal for Grocery stores, hardware, pharmacy and more.'
+      } 
+    ]);
+    
     this.contactUsForm = new FormGroup({
       name: new FormControl(),
       email: new FormControl(),
@@ -124,6 +140,8 @@ export class HomeComponent implements OnInit {
   }
 
   buyNow( key ) {
+
+    window.scrollTo(0,0);
 
     let options = [
       {

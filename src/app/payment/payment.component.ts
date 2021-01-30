@@ -3,6 +3,7 @@ import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { PaymentService } from '../payment.service';
 import { Router } from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
+import { Title } from "@angular/platform-browser";
 
 declare var paypal;
 
@@ -26,10 +27,12 @@ export class PaymentComponent implements OnInit {
     private FormBuilder: FormBuilder, 
     private paymentService: PaymentService, 
     private router: Router, 
-    private cookieService: CookieService 
-    
+    private cookieService: CookieService,
+    private title: Title
+
     ) { 
 
+    this.title.setTitle("Checkout");
     const cookieExist = this.cookieService.check('cart'); 
     this.cart = JSON.parse(this.cookieService.get("cart"));
 
@@ -47,8 +50,7 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit() { 
-    
-
+     
     paypal.Buttons({  
       onInit: (data, actions) => {
 
@@ -98,8 +100,7 @@ export class PaymentComponent implements OnInit {
           
         });
       },
-      onClick : (data, actions) => { 
-        
+      onClick : (data, actions) => {  
         this.formSubmitted = true;
          
       }

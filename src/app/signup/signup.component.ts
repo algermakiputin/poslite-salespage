@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, Validators } from '@angular/forms';
 import { SignupService } from '../signup.service';
+import { Title } from "@angular/platform-browser";
 
 @Component({
   selector: 'app-signup',
@@ -15,7 +16,9 @@ export class SignupComponent implements OnInit {
   email_exist = false;
   loading = false;
   
-  constructor( private FormBuilder: FormBuilder, private signupService: SignupService ) {
+  constructor( private FormBuilder: FormBuilder, private signupService: SignupService, private title: Title ) {
+
+    this.title.setTitle("Sign up to POSLite Free Trial");
 
     this.signupForm = this.FormBuilder.group({
       'fname': new FormControl('', [Validators.required]),
