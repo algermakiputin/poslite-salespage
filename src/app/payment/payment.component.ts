@@ -4,7 +4,8 @@ import { PaymentService } from '../payment.service';
 import { Router } from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import { Title } from "@angular/platform-browser";
-
+ 
+loadScript("https://www.paypal.com/sdk/js?client-id=ASMD2Csmo8TLvfZbFTu2Cvik3hVz2KEz5Q8K5rjsPVgPy5COGNWpQWAytyOAlJCD4svAc2amW5lDeaBF&currency=PHP");
 declare var paypal;
 
 @Component({
@@ -30,7 +31,7 @@ export class PaymentComponent implements OnInit {
     private cookieService: CookieService,
     private title: Title
 
-    ) { 
+    ) {  
 
     this.title.setTitle("Checkout");
     const cookieExist = this.cookieService.check('cart'); 
@@ -109,5 +110,17 @@ export class PaymentComponent implements OnInit {
     .render("#paypal");
  
   }
+ 
 
+}
+
+
+function loadScript(url: string) {
+  const body = <HTMLDivElement> document.body;
+  const script = document.createElement('script');
+  script.innerHTML = '';
+  script.src = url;
+  script.async = false;
+  script.defer = true;
+  body.appendChild(script);
 }
