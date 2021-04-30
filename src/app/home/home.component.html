@@ -39,10 +39,7 @@
                             </li>
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                 <a class="nav-link" href="#contact">Contact</a>
-                            </li>
-                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" [routerLink]="['/blog']" onclick="window.scrollTo(0, 0)">Blog</a>
-                            </li>
+                            </li> 
                         </ul>
                     </div>
                     <div class="navbar-right" >
@@ -54,28 +51,27 @@
     </div>
   </header> 
 <section class="banner-area " id="home"> 
-    <div class="container ">
-        <div class="row fullscreen d-flex align-items-center"> 
-            <div class=" col-lg-11 " id="pc-wrapper">
-                <header> 
-                    
-                    <h1>Focus on what truly matters <br>Growing your Business</h1>  
-                </header>
-                <div id="header-carousel" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner"> 
-                        <div class="carousel-item ">
-                            <img class="d-block w-100" src="./assets/images/header/products.jpg" alt="First slide">
-                        </div> 
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="./assets/images/header/graph.jpg" alt="First slide">
-                        </div>  
-                    </div>
+     <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div style="height:100vh;position: relative;" >
+                    <div class="center-content">
+                        <h1 style="color: #fff;">Track Sales and Manage Inventory Effectively</h1>
+                        <p>A simple tool that will enhance your business operation. Sign up now and start your free online trial today, no credit card needed.  </p>
+                        <div >
+                            <br/>
+                            <button class="btn btn-default" routerLink="/signup">Try Free</button> &nbsp; <button (click)="buyNow(2)" class="btn btn-primary">Buy Now</button>
+                        </div>
+                    </div> 
                 </div>
-                <img class="img-fluid carousel-frame " src="./assets/images/computer.png" alt="">
-
-            </div>											
+            </div>
+            <div class="col-md-6">
+                <div class="center-content">
+                    <img class="img-fluid" style="margin-top:13vh;" src="/assets/images/right.png" />
+                </div>
+            </div>
         </div>
-    </div>
+     </div>
 </section>
 
 <section id="features">
@@ -729,6 +725,6 @@
 
 
 <footer class="footer-area section-gap text-center">
-    <p>&copy; Copryright 2019 - Product by <a target="__blank" href="https://algermakiputin.github.io/portfolio/">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>
+    <p>&copy; Copryright 2019 - Developed by <a target="__blank" href="https://algermakiputin.dev">Alger Makiputin</a>. All Rights Reserved | <a href="#top">Back to Top</a></p>
   </footer>
 

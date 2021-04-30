@@ -22,21 +22,38 @@
 	text-align: center;margin-top: 14%;margin-bottom: 40px;
 	margin-left: auto;
 	margin-right: auto;
+} 
+.center-content {
+    position: absolute; 
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
-
-#home {
-	margin-bottom: 290px;
-	max-height: 879px;
-}
-
 #home h1 {
-	color: #fff;
-	max-width: 680px;
-	font-size: 2.7em;
-	margin:auto;
-	margin: 15px auto 50px auto;
+    line-height: 1.4!important;
+    font-size: 3.1em;
+    margin-bottom: 22px;
+
+}
+#home button {
+    font-weight: bold;
+    border-radius: 1px;
+    padding: 12px 30px;
+    font-size: 1.15em;
+} 
+
+#home button.btn-default {
+    background: none;
+    border:solid 1px #fff;
+    color: #fff;
+    transition: 0.5s ease-in;
 }
 
+#home button.btn-default:hover {
+    border-color:#007bff;
+    background-color: #fff;
+    color: #333;
+}
 #features {
 	padding: 80px 0 100px 0;
 }
@@ -411,8 +428,10 @@ textarea.is-invalid
 .start-header.scroll-on .navbar-brand img{
 	height: 28px;
 	-webkit-transition : all 0.3s ease-out;
-	transition : all 0.3s ease-out;
+	transition : all
+     0.3s ease-out;
 }
+ 
 .navigation-wrap{
 	position: fixed;
 	width: 100%;
@@ -522,7 +541,7 @@ textarea.is-invalid
 }
 
 .nav-item .nav-link {
-    font-size: 14.5px;
+    font-size: 16px;
 }
 
 .blog-wrapper ul {
@@ -632,11 +651,7 @@ input[type="submit"]:disabled {
 	
 	#header-carousel {
         padding: 19px 34px 90px 15px;
-	}
-	
-	#home {
-		margin-bottom: 160px;
-	}
+	} 
 
 	.icon-container {
 		height:105px;
@@ -672,20 +687,20 @@ input[type="submit"]:disabled {
 
 @media only screen and (max-width: 425px) {
 
+    #reviews-for-mobile {
+        min-height: 450px;
+    }
 	#pc-wrapper {
 		margin-top: 26%;
-	}
-	#home {
-		max-height: 525px;
-	}
-
-	#features {
-		margin-top: 150px;
-	}
+	}  
 
 	#counter {
 		margin: 80px 0 0 0;
 	}
+
+    #home .row .col-md-6:nth-child(2) {
+        display: none;
+    }
 }
 
 @media only screen and (max-width: 375px) {

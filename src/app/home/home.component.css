@@ -23,6 +23,13 @@
     padding: 0 20px;
 }
 
+@media only screen and (max-width:768px) {
+
+    #home h1 {
+        font-size: 2.5em;
+    }
+}
+
 @media only screen and (max-width:581px) {
     #reviews-for-desktop {
         display: none;
@@ -39,3 +46,8 @@
         display: none;
     }
 } 
+
+#home p {
+    color: #fff;
+    font-size: 16px;
+}
