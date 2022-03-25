@@ -19,6 +19,16 @@
     padding: 100px 0;
 }
 
+#featured {
+    padding: 80px 0 80px 0;
+   
+}
+
+#featured blockquote{
+    line-height: 1.625em;
+    font-size: 1.5em;
+}
+
 #reviews-for-mobile {
     padding: 0 20px;
 }
@@ -28,6 +38,10 @@
     #home h1 {
         font-size: 2.5em;
     }
+}
+
+#features {
+    background-color: #faf8f8;
 }
 
 @media only screen and (max-width:581px) {
