@@ -23,22 +23,22 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="navbar-collapse collapse" id="mainnav" > 
-                        <ul class="navbar-nav ml-auto py-4 py-md-0">
+                        <ul class="navbar-nav py-4 py-md-0">
                         
-                            <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" href="#home">Home</a>
+                            <li class="nav-item ">
+                                <a class="nav-link" routerLink="/">Home</a>
                             </li>
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" href="#features">Features</a>
+                                <a class="nav-link" routerLink="/">Features</a>
                             </li> 
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" href="#reviews">Reviews</a>
+                                <a class="nav-link" routerLink="/">Reviews</a>
                             </li>
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" href="#pricing">Pricing</a>
+                                <a class="nav-link" routerLink="/">Pricing</a>
                             </li>
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
-                                <a class="nav-link" href="#contact">Contact</a>
+                                <a class="nav-link" routerLink="/">Contact</a>
                             </li>
                             <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
                                 <a class="nav-link" [routerLink]="['/blog']" onclick="window.scrollTo(0, 0)">Blog</a>
@@ -120,7 +120,7 @@
                         <td>&#8369;{{ this.cart.price | number }}</td>
                     </tr>
                 </table> 
-                <div id="paypal"></div>
+                <div id="paypal-button"></div>
             </div>
         </div>
         </div>

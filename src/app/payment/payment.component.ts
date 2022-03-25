@@ -4,9 +4,9 @@ import { PaymentService } from '../payment.service';
 import { Router } from "@angular/router";
 import { CookieService } from 'ngx-cookie-service';
 import { Title } from "@angular/platform-browser";
+  
+declare var paypal_sdk;
  
-loadScript("https://www.paypal.com/sdk/js?client-id=ASMD2Csmo8TLvfZbFTu2Cvik3hVz2KEz5Q8K5rjsPVgPy5COGNWpQWAytyOAlJCD4svAc2amW5lDeaBF&currency=PHP");
-declare var paypal;
 
 @Component({
   selector: 'app-payment',
@@ -36,7 +36,7 @@ export class PaymentComponent implements OnInit {
     this.title.setTitle("Checkout");
     const cookieExist = this.cookieService.check('cart'); 
     this.cart = JSON.parse(this.cookieService.get("cart"));
-
+     
     if ( !cookieExist )
       this.router.navigate(["/"]);
 
@@ -51,8 +51,8 @@ export class PaymentComponent implements OnInit {
   }
 
   ngOnInit() { 
-     
-    paypal.Buttons({  
+      
+    paypal_sdk.Buttons({  
       onInit: (data, actions) => {
 
         actions.disable();
@@ -68,7 +68,7 @@ export class PaymentComponent implements OnInit {
               ); 
       },
       createOrder: (data, actions) => {
- 
+  
         return actions.order.create({
           purchase_units: [{
             amount: {
@@ -103,11 +103,16 @@ export class PaymentComponent implements OnInit {
       },
       onClick : (data, actions) => {  
         this.formSubmitted = true;
-         
+          
+      },
+      onError: function(err) {
+        alert(err)
       }
       
     })
-    .render("#paypal");
+    .render("#paypal-button");
+    
+     
  
   }
  
@@ -118,9 +123,11 @@ export class PaymentComponent implements OnInit {
 function loadScript(url: string) {
   const body = <HTMLDivElement> document.body;
   const script = document.createElement('script');
+  script.setAttribute('data-namespace', 'paypal_sdk');
   script.innerHTML = '';
   script.src = url;
   script.async = false;
-  script.defer = true;
+  script.defer = false;
+  console.log(script)
   body.appendChild(script);
 }
