@@ -139,28 +139,28 @@ export class HomeComponent implements OnInit {
   
   }
 
-  buyNow( key ) {
-
-    window.scrollTo(0,0);
-
+  buyNow( key ) { 
     let options = [
       {
         'version' : 'Bronze',
-        'price' : 5999
+        'price' : 3499,
+        'url' : 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-bronze/'
       },
       {
         'version' : 'Silver',
-        'price' : 10999
+        'price' : 5699.75,
+        'url': 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-silver/'
       },
       {
         'version' : 'Gold',
-        'price' : 15999
+        'price' : 8999.75,
+        'url': 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-gold-version/'
       }
     ];
 
     this.cookieService.set('cart',JSON.stringify(options[key]));
-
-    this.router.navigate(['/checkout']);
+    window.open(options[key].url);
+    // window.location.href = options[key].url;
     
   }
 
