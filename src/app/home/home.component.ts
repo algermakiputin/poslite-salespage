@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from "@angular/router";
 import { Meta, Title } from "@angular/platform-browser";
-
+import * as prices from '../../prices.json';
 declare const navbar_spyscroll: any;
 declare const start_counter: any;
 
@@ -28,8 +28,7 @@ export class HomeComponent implements OnInit {
     support: 'free',
     total: 0
   }; 
-
-
+  price;
   reviews = [
     {
       title: "Magandang Gamitin sa Negosyo",
@@ -88,7 +87,7 @@ export class HomeComponent implements OnInit {
   platform = [5200, 10000];
   
   enquiriesModel = new Enquiries("", "", "", "");
-  contactUsForm;
+  contactUsForm; 
 
   constructor( 
     private _enquiryService: EnquiriesService, 
@@ -112,12 +111,12 @@ export class HomeComponent implements OnInit {
       email: new FormControl(),
       contact: new FormControl(),
       message: new FormControl() 
-    });
-
+    }); 
   }
 
   ngOnInit() { 
-     
+    this.price = prices;
+    console.log(this.price.pricing)
     navbar_spyscroll();
     start_counter();
    
@@ -143,17 +142,17 @@ export class HomeComponent implements OnInit {
     let options = [
       {
         'version' : 'Bronze',
-        'price' : 3499,
+        'price' : prices.pricing.bronze,
         'url' : 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-bronze/'
       },
       {
         'version' : 'Silver',
-        'price' : 5699.75,
+        'price' : prices.pricing.silver,
         'url': 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-silver/'
       },
       {
         'version' : 'Gold',
-        'price' : 8999.75,
+        'price' : prices.pricing.gold,
         'url': 'https://shop.poslitesoftware.com/product/poslite-inventory-management-software-gold-version/'
       }
     ];
